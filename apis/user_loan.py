@@ -44,7 +44,7 @@ class LoanApis(MethodView):
         saved_loan = save_loan_to_database(
             request.json, request.headers['partner_secret']
         )
-        db.session.add(saved_loan)
+        db.session.add()
         db.session.commit()
     
         return jsonify(
